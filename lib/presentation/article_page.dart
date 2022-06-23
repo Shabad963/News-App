@@ -9,7 +9,7 @@ class ArticlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _date = DateTime.parse(article.publishedAt!);
-    final formattedDate = DateFormat('yMd').format(_date);
+    final formattedDate = DateFormat('yyyy-MM-dd').format(_date);
     return Scaffold(
       body: Stack(
         children: [
@@ -21,7 +21,7 @@ class ArticlePage extends StatelessWidget {
                 colors: [
                   Colors.transparent,
                   Colors.transparent,
-                  Colors.black,
+                  Colors.black87,
                   Colors.black
                 ],
                 begin: Alignment.topCenter,
@@ -64,15 +64,20 @@ class ArticlePage extends StatelessWidget {
                         style:
                             const TextStyle(color: Colors.white, fontSize: 16)),
                     Text(formattedDate,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 16))
+                        style: const TextStyle(
+                            color: Colors.white54,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold))
                   ],
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Text(article.description!,
-                    style: const TextStyle(color: Colors.grey, fontSize: 20))
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20,
+                    ))
               ],
             ),
           ),

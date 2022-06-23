@@ -31,7 +31,7 @@ class HomeCard extends StatelessWidget {
             itemBuilder: (context, index) {
               final articles = state.news[index];
               final _date = DateTime.parse(articles.publishedAt!);
-              final formattedDate = DateFormat('yMd').format(_date);
+              final formattedDate = DateFormat('yyyy-MM-dd').format(_date);
               return GestureDetector(
                 onTap: () {
                   navigateToArticleDetailPage(context, articles);
@@ -73,9 +73,12 @@ class HomeCard extends StatelessWidget {
                           children: [
                             Text(
                               articles.title!,
-                              maxLines: 3,
+                              maxLines: 2,
+                              overflow: TextOverflow.clip,
                               style: const TextStyle(
-                                  fontSize: 15, color: Colors.white),
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
                             ),
                             const SizedBox(
                               height: 10,
