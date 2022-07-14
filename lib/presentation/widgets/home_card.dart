@@ -86,12 +86,15 @@ class HomeCard extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  articles.author!,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12,
-                                      color: Colors.white),
+                                Expanded(
+                                  child: Text(
+                                    articles.author!,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                        color: Colors.white),
+                                  ),
                                 ),
                                 const SizedBox(
                                   width: 20,

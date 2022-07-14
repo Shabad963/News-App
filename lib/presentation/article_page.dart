@@ -60,9 +60,12 @@ class ArticlePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(article.author!,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 16)),
+                    Expanded(
+                      child: Text(article.author!,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 16)),
+                    ),
                     Text(formattedDate,
                         style: const TextStyle(
                             color: Colors.white54,
@@ -74,6 +77,8 @@ class ArticlePage extends StatelessWidget {
                   height: 20,
                 ),
                 Text(article.description!,
+                    maxLines: 6,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 20,
